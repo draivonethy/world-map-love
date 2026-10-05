@@ -116,7 +116,7 @@ function Index() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">O diferencial</p>
             <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">Método IR</h2>
-            <p className="mt-6 font-display text-2xl italic opacity-90">“Ondas de cuidado focadas na pessoa inteira, não apenas onde dói.”</p>
+            <p className="mt-6 font-display text-2xl italic">“Ondas de cuidado focadas na pessoa inteira, não apenas onde dói.”</p>
           </div>
           <div className="space-y-6">
             {[["Escuta ativa", "Cada sessão começa entendendo sua história, sua rotina e seus objetivos."],
@@ -124,7 +124,7 @@ function Index() {
               ["Cuidado personalizado", "Protocolos desenhados para a causa raiz do seu problema e para a sua evolução."]].map(([t, d], i) => (
               <div key={t} className="flex gap-5 border-b border-primary-foreground/15 pb-6">
                 <span className="font-display text-3xl text-accent">0{i + 1}</span>
-                <div><h3 className="text-xl font-semibold">{t}</h3><p className="mt-1 opacity-75">{d}</p></div>
+                <div><h3 className="text-xl font-semibold">{t}</h3><p className="mt-1 text-primary-foreground/85">{d}</p></div>
               </div>
             ))}
           </div>
