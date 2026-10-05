@@ -111,7 +111,7 @@ function Index() {
       </section>
 
       {/* Method */}
-      <section id="metodo" className="bg-primary text-primary-foreground">
+      <section id="metodo" className="border-y bg-method text-primary-foreground">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">O diferencial</p>
