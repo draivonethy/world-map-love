@@ -62,6 +62,7 @@
   --input: oklch(0.3 0.03 285);
   --ring: oklch(0.75 0.12 185);
   --gradient-hero: radial-gradient(ellipse at 80% 20%, oklch(0.62 0.2 295 / 0.35), transparent 55%), radial-gradient(ellipse at 15% 85%, oklch(0.75 0.12 185 / 0.22), transparent 50%), linear-gradient(160deg, oklch(0.2 0.03 285), oklch(0.14 0.015 280));
+  --gradient-method: radial-gradient(ellipse at 88% 8%, oklch(0.62 0.2 295 / 0.3), transparent 58%), radial-gradient(ellipse at 6% 92%, oklch(0.75 0.12 185 / 0.24), transparent 52%), linear-gradient(165deg, oklch(0.19 0.04 292), oklch(0.13 0.018 280));
   --shadow-glow: 0 18px 40px -12px oklch(0.75 0.12 185 / 0.45);
   --shadow-card: 0 12px 30px -16px oklch(0 0 0 / 0.6);
 }
@@ -78,5 +79,6 @@
 }
 
 @utility bg-hero { background: var(--gradient-hero); }
+@utility bg-method { background: var(--gradient-method); }
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
 @utility shadow-card { box-shadow: var(--shadow-card); }
