@@ -112,19 +112,43 @@ function Index() {
 
       {/* Method */}
       <section id="metodo" className="border-y bg-method text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">O diferencial</p>
-            <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">Método IR</h2>
-            <p className="mt-6 font-display text-2xl italic">“Ondas de cuidado focadas na pessoa inteira, não apenas onde dói.”</p>
+        <div className="mx-auto grid max-w-6xl items-start gap-16 px-5 py-24 lg:grid-cols-12 lg:gap-24">
+          <div className="lg:col-span-5">
+            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent">O diferencial</p>
+            <h2 className="mt-4 font-serif text-6xl leading-[1.05] sm:text-7xl">
+              Método <span className="text-brand">IR</span>
+            </h2>
+            <div className="relative mt-10">
+              <div className="absolute inset-y-0 left-0 w-px bg-rule-y" />
+              <p className="pl-8 font-serif text-xl italic leading-relaxed text-primary-foreground/85 sm:text-2xl">
+                “Ondas de cuidado focadas na pessoa inteira, não apenas onde dói.”
+              </p>
+            </div>
+            <div className="mt-12 opacity-25">
+              <svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 10C20 10 20 2 40 2C60 2 60 18 80 18C100 18 100 10 120 10C140 10 140 2 160 2" stroke="url(#waveIR)" strokeWidth="1.5" />
+                <defs>
+                  <linearGradient id="waveIR" x1="0" y1="10" x2="160" y2="10" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="var(--accent)" />
+                    <stop offset="1" stopColor="var(--primary)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
-          <div className="space-y-6">
+          <div className="lg:col-span-7">
             {[["Escuta ativa", "Cada sessão começa entendendo sua história, sua rotina e seus objetivos."],
               ["Empatia", "Um ambiente acolhedor, onde você é tratado como pessoa — não como diagnóstico."],
               ["Cuidado personalizado", "Protocolos desenhados para a causa raiz do seu problema e para a sua evolução."]].map(([t, d], i) => (
-              <div key={t} className="flex gap-5 border-b border-primary-foreground/15 pb-6">
-                <span className="font-display text-3xl text-accent">0{i + 1}</span>
-                <div><h3 className="text-xl font-semibold">{t}</h3><p className="mt-1 text-primary-foreground/85">{d}</p></div>
+              <div key={t} className="group relative border-b border-primary-foreground/10 py-10 last:border-0">
+                <div className="flex items-start gap-8">
+                  <span className="font-display text-4xl font-light text-accent/40 transition-colors duration-500 group-hover:text-accent">0{i + 1}</span>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-semibold tracking-tight">{t}</h3>
+                    <p className="max-w-lg leading-relaxed text-primary-foreground/70">{d}</p>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-sweep-x transition-all duration-700 group-hover:w-full" />
               </div>
             ))}
           </div>
