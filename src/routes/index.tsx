@@ -363,7 +363,7 @@ function Index() {
       </footer>
 
       <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-50 grid h-16 w-16 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow transition hover:scale-110">
+        className="fixed bottom-6 left-6 z-50 grid h-16 w-16 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow transition hover:scale-110">
         <MessageCircle className="h-8 w-8" />
       </a>
     </main>
