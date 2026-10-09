@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Activity, HandHeart, MapPin, Clock, Phone, Star, Sparkles, Zap, Quote, MessageCircle, Navigation } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import { 
+  Activity, 
+  HandHeart, 
+  MapPin, 
+  Clock, 
+  Phone, 
+  Star, 
+  Sparkles, 
+  Zap, 
+  Quote, 
+  MessageCircle, 
+  Navigation, 
+  Menu, 
+  X, 
+  ChevronRight,
+  ShieldCheck,
+  User
+} from "lucide-react";
 
-const WA = "https://wa.me/5563992899971?text=" + encodeURIComponent("Olá, Dra. Ivonete! Gostaria de agendar minha avaliação.");
+const WA = "https://wa.me/556392899971?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20cl%C3%ADnica%20com%20a%20Dra%20Ivonete.";
 const ADDRESS = "Av. Filadélfia, 2815 - Jardim América, Araguaína - TO, 77805-221";
 const MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Dra. Ivonete Ribeiro Fisioterapia " + ADDRESS);
 
@@ -10,7 +27,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Dra. Ivonete Ribeiro | Fisioterapia & Pilates em Araguaína" },
-      { name: "description", content: "Fisioterapia, Pilates Clínico, Quiropraxia e Liberação Miofascial em Araguaína-TO. Método IR: trate a causa, não apenas a dor. Nota 4,9 no Google." },
+      { name: "description", content: "Fisioterapia, Pilates Clínico, Quiropraxia e Liberação Miofascial em Araguaína-TO. Método IR: trate a causa, não apenas a dor. Nota 4,9 no Google com + de 36 avaliações." },
       { property: "og:title", content: "Dra. Ivonete Ribeiro | Fisio & Fitness" },
       { property: "og:description", content: "Transforme a sua dor em liberdade de movimento com o Método IR. Agende sua avaliação." },
       { property: "og:type", content: "website" },
@@ -24,7 +41,7 @@ const services = [
   { icon: Activity, t: "Pilates Clínico & Reabilitação", d: "Força, postura, controle e mobilidade." },
   { icon: HandHeart, t: "Quiropraxia & Liberação Miofascial", d: "Alívio de dores na coluna, tensões e mobilidade." },
   { icon: Sparkles, t: "Tratamento da Dor & Hérnia de Disco", d: "Foco na causa raiz do sintoma." },
-  { icon: Zap, t: "Terapia Invasiva & Laserterapia", d: "Aceleração da recuperação tecidual." },
+  { icon: Zap, t: "Terapia Neural & Laserterapia", d: "Aceleração da recuperação tecidual." },
 ];
 
 const reviews = [
@@ -47,28 +64,148 @@ function Stars() {
 }
 
 function Index() {
+  const [navOpen, setNavOpen] = useState(false);
+
+  const navigateTo = (id: string) => {
+    setNavOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navLinks = [
+    { id: "servicos", label: "Especialidades & Serviços", desc: "Pilates clínico, quiropraxia e reabilitação", icon: Activity },
+    { id: "metodo", label: "O Método IR", desc: "Cuidado focado na causa raiz", icon: Sparkles },
+    { id: "sobre", label: "Sobre a Dra. Ivonete", desc: "História, experiência e CREFITO", icon: User },
+    { id: "depoimentos", label: "Depoimentos & Avaliações", desc: "Nota 4,9 no Google por pacientes reais", icon: Star },
+    { id: "contato", label: "Localização & Contato", desc: "Av. Filadélfia, 2815 - Araguaína-TO", icon: MapPin },
+  ];
+
   return (
     <main className="overflow-x-hidden">
       {/* Nav */}
-      <header className="absolute inset-x-0 top-0 z-20">
+      <header className="absolute inset-x-0 top-0 z-30">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 text-primary-foreground">
-          <a href="#" className="font-display text-xl font-semibold">Ivonete Ribeiro<span className="text-accent">.</span></a>
-          <div className="hidden gap-8 text-sm md:flex">
-            <a href="#servicos" className="opacity-80 hover:opacity-100">Serviços</a>
-            <a href="#metodo" className="opacity-80 hover:opacity-100">Método IR</a>
-            <a href="#sobre" className="opacity-80 hover:opacity-100">Sobre</a>
-            <a href="#depoimentos" className="opacity-80 hover:opacity-100">Depoimentos</a>
-            <a href="#contato" className="opacity-80 hover:opacity-100">Contato</a>
+          <a href="#" className="font-display text-xl font-semibold">Dra. Ivonete Ribeiro<span className="text-accent">.</span></a>
+
+          <div className="flex items-center gap-6">
+            <div className="hidden gap-8 text-sm md:flex">
+              <a href="#servicos" className="opacity-80 hover:opacity-100">Serviços</a>
+              <a href="#metodo" className="opacity-80 hover:opacity-100">Método IR</a>
+              <a href="#sobre" className="opacity-80 hover:opacity-100">Sobre</a>
+              <a href="#depoimentos" className="opacity-80 hover:opacity-100">Depoimentos</a>
+              <a href="#contato" className="opacity-80 hover:opacity-100">Contato</a>
+            </div>
+
+            {/* Menu button for site locations — mobile only */}
+            <button
+              onClick={() => setNavOpen(!navOpen)}
+              aria-label="Abrir localizações do site"
+              className="md:hidden grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-primary-foreground backdrop-blur-md transition hover:bg-white/20 active:scale-95"
+            >
+              <Menu className="h-5 w-5 text-accent" />
+            </button>
           </div>
         </nav>
       </header>
+
+      {/* Interactive Site Locations Overlay Drawer — mobile only */}
+      {navOpen && (
+        <div className="md:hidden fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+          <div 
+            className="flex h-full w-full max-w-md flex-col justify-between border-l border-white/15 bg-slate-950 p-6 text-white shadow-2xl sm:p-8 overflow-y-auto"
+            style={{ background: "linear-gradient(165deg, oklch(0.22 0.04 290), oklch(0.13 0.02 280))" }}
+          >
+            <div>
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-5">
+                <span className="font-display text-base font-bold text-white">
+                  Dra. Ivonete Ribeiro<span className="text-accent">.</span>
+                </span>
+
+                <button
+                  onClick={() => setNavOpen(false)}
+                  aria-label="Fechar menu"
+                  className="grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-white/80 transition hover:bg-white/20 hover:text-white"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              {/* Navigation Items */}
+              <div className="mt-6 space-y-2">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Navegar pelas seções</p>
+                
+                {navLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => navigateTo(item.id)}
+                      className="group flex w-full items-center justify-between rounded-2xl border border-white/5 bg-white/5 p-3.5 text-left transition hover:bg-white/15 hover:border-accent/40"
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <div className="grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-accent transition group-hover:bg-accent group-hover:text-accent-foreground">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-sm text-white group-hover:text-accent transition-colors">
+                            {item.label}
+                          </div>
+                          <div className="text-xs text-white/60">
+                            {item.desc}
+                          </div>
+                        </div>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-white/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Bottom Contact & CTA */}
+            <div className="mt-8 border-t border-white/10 pt-6 space-y-4">
+              <div className="space-y-2 text-xs text-white/70">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5 text-accent" />
+                  <span>Av. Filadélfia, 2815 - Araguaína-TO</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-3.5 w-3.5 text-accent" />
+                  <span>Segunda a sexta, até as 20h</span>
+                </div>
+              </div>
+
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setNavOpen(false)}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-accent py-3.5 text-sm font-bold text-accent-foreground shadow-glow transition hover:brightness-110"
+              >
+                <MessageCircle className="h-5 w-5" />
+                <span>Agendar Avaliação no WhatsApp</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* Hero */}
       <section className="bg-hero text-primary-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-28 md:grid-cols-2 md:pt-36">
           <div>
-            <a href={MAPS} target="_blank" rel="noopener noreferrer" className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 px-4 py-1.5 text-sm">
-              <Star className="h-4 w-4 fill-current text-accent" /> 4,9 no Google · 36 avaliações
+            <a href={MAPS} target="_blank" rel="noopener noreferrer" 
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-accent/40 bg-accent/15 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm backdrop-blur-md transition-all hover:bg-accent/25 hover:border-accent hover:scale-[1.02]">
+              <span className="flex items-center text-accent">
+                <Star className="h-4 w-4 fill-current" />
+              </span>
+              <span className="font-semibold text-accent">4,9 no Google</span>
+              <span className="opacity-50">·</span>
+              <span className="opacity-90">+ de 36 avaliações</span>
             </a>
             <h1 className="text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
               Transforme a sua dor em <em className="text-accent">liberdade</em> de movimento
@@ -80,8 +217,8 @@ function Index() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -inset-3 rounded-[2.5rem] bg-accent/30 blur-2xl" />
-            <img src={hero} alt="Dra. Ivonete Ribeiro em seu estúdio de Pilates clínico" width={1024} height={1280}
-              className="relative aspect-[4/5] w-full rounded-[2rem] object-cover" />
+            <img src="/clinica-hero.jpg" alt="Estúdio de Pilates clínico e Fisioterapia - Dra. Ivonete Ribeiro" width={1024} height={1280}
+              className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl" />
           </div>
         </div>
       </section>
@@ -158,7 +295,14 @@ function Index() {
       {/* About */}
       <section id="sobre" className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-24 md:grid-cols-5">
         <div className="md:col-span-2">
-          <img src={hero} alt="Dra. Ivonete Ribeiro" loading="lazy" width={1024} height={1280} className="aspect-square w-full rounded-[2rem] object-cover object-top" />
+          <img 
+            src="/ivone-home.jpg" 
+            alt="Dra. Ivonete Ribeiro" 
+            loading="lazy" 
+            width={1066} 
+            height={1600} 
+            className="aspect-[3/4] w-full rounded-[2rem] object-cover object-top shadow-card" 
+          />
         </div>
         <div className="md:col-span-3">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">Sobre</p>
@@ -184,7 +328,7 @@ function Index() {
             </div>
             <a href={MAPS} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-2xl bg-card px-5 py-3 shadow-card">
               <span className="font-display text-3xl font-semibold text-primary">4,9</span>
-              <span><Stars /><span className="text-xs text-muted-foreground">36 avaliações no Google</span></span>
+              <span><Stars /><span className="text-xs text-muted-foreground">+ de 36 avaliações no Google</span></span>
             </a>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
