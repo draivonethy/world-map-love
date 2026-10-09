@@ -206,7 +206,7 @@ function Index() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -inset-3 rounded-[2.5rem] bg-accent/30 blur-2xl" />
-            <img src="/clinica-hero.jpg" alt="Estúdio de Pilates clínico e Fisioterapia - Dra. Ivonete Ribeiro" width={1024} height={1280}
+            <img src="/seção-hero.jpg" alt="Estúdio de Pilates clínico e Fisioterapia - Dra. Ivonete Ribeiro" width={1024} height={1280}
               className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl" />
           </div>
         </div>
