@@ -187,7 +187,7 @@ function Index() {
       <section className="bg-hero text-primary-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-28 md:grid-cols-2 md:pt-36">
           <div>
-            <a href={MAPS} target="_blank" rel="noopener noreferrer" 
+            <a href={MAPS} target="_blank" rel="noopener noreferrer"
               className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-accent/40 bg-accent/15 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm backdrop-blur-md transition-all hover:bg-accent/25 hover:border-accent hover:scale-[1.02]">
               <span className="flex items-center text-accent">
                 <Star className="h-4 w-4 fill-current" />
@@ -202,12 +202,12 @@ function Index() {
             <p className="mt-6 max-w-lg text-lg opacity-85">
               Tratamentos personalizados para a causa do seu problema, não apenas para a dor. Recupere sua qualidade de vida com o Método IR.
             </p>
-            <WaButton className="mt-9 w-full sm:w-auto">Agendar Minha Avaliação no WhatsApp</WaButton>
           </div>
-          <div className="relative mx-auto w-full max-w-md">
+          <div className="relative mx-auto w-full max-w-md flex flex-col items-center">
             <div className="absolute -inset-3 rounded-[2.5rem] bg-accent/30 blur-2xl" />
             <img src="/seção-hero.jpg" alt="Estúdio de Pilates clínico e Fisioterapia - Dra. Ivonete Ribeiro" width={1024} height={1280}
               className="relative w-full rounded-[2rem] object-contain shadow-2xl" />
+            <WaButton className="mt-9 w-full sm:w-auto">Agendar Minha Avaliação no WhatsApp</WaButton>
           </div>
         </div>
       </section>
@@ -242,7 +242,7 @@ function Index() {
           <div className="lg:col-span-5">
             <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent">O diferencial</p>
             <h2 className="mt-4 font-serif text-6xl leading-[1.05] sm:text-7xl">
-              Método <span className="text-brand">IR</span>
+              Método <span className="text-brand">IR</span> - Corpo em movimento
             </h2>
             <div className="relative mt-10">
               <div className="absolute inset-y-0 left-0 w-px bg-rule-y" />
