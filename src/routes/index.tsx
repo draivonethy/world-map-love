@@ -23,19 +23,8 @@ const WA = "https://wa.me/556392899971?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%
 const ADDRESS = "Av. Filadélfia, 2815 - Jardim América, Araguaína - TO, 77805-221";
 const MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Dra. Ivonete Ribeiro Fisioterapia " + ADDRESS);
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Dra. Ivonete Ribeiro | Fisioterapia & Pilates em Araguaína" },
-      { name: "description", content: "Fisioterapia, Pilates Clínico, Quiropraxia e Liberação Miofascial em Araguaína-TO. Método IR: trate a causa, não apenas a dor. Nota 4,9 no Google com + de 36 avaliações." },
-      { property: "og:title", content: "Dra. Ivonete Ribeiro | Fisio & Fitness" },
-      { property: "og:description", content: "Transforme a sua dor em liberdade de movimento com o Método IR. Agende sua avaliação." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
+export const Route = createFileRoute("/")({ component: Index });
+
 
 const services = [
   { icon: Activity, t: "Pilates Clínico & Reabilitação", d: "Força, postura, controle e mobilidade." },
