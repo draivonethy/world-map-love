@@ -263,9 +263,10 @@ function Index() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            {[["Escuta ativa", "Cada sessão começa entendendo sua história, sua rotina e seus objetivos."],
-              ["Empatia", "Um ambiente acolhedor, onde você é tratado como pessoa — não como diagnóstico."],
-              ["Cuidado personalizado", "Protocolos desenhados para a causa raiz do seu problema e para a sua evolução."]].map(([t, d], i) => (
+            {[["Escuta ativa e empática", "Cada sessão começa com uma escuta atenta e empática, entendendo sua história, rotina e objetivos."],
+              ["Avaliação postural", "Avaliação postural especializada feita através de fotos e vídeos."],
+              ["Investigação", "Investigamos a origem do problema com base nos resultados da avaliação."],
+              ["Intervenção", "Definimos e iniciamos o tratamento personalizado."]].map(([t, d], i) => (
               <div key={t} className="group relative border-b border-primary-foreground/10 py-10 last:border-0">
                 <div className="flex items-start gap-8">
                   <span className="font-display text-4xl font-light text-accent/40 transition-colors duration-500 group-hover:text-accent">0{i + 1}</span>
