@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({ component: Index });
 const services = [
   { icon: Activity, t: "Pilates Clínico & Reabilitação", d: "Força, postura, controle e mobilidade." },
   { icon: HandHeart, t: "Quiropraxia & Liberação Miofascial", d: "Alívio de dores na coluna, tensões e mobilidade." },
-  { icon: Sparkles, t: "Tratamento da Dor & Hérnia de Disco", d: "Foco na causa raiz do sintoma." },
+  { icon: Sparkles, t: "Tratamento da Dor & Hérnias de Disco", d: "Foco na causa raiz do sintoma." },
   { icon: Zap, t: "Terapia Neural & Laserterapia", d: "Aceleração da recuperação tecidual." },
 ];
 
@@ -197,7 +197,7 @@ function Index() {
               <span className="opacity-90">+ de 36 avaliações</span>
             </a>
             <h1 className="text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-              Transforme a sua dor em <em className="text-accent">liberdade</em> de movimento
+              Transforme a sua dor em <em className="text-accent">movimento</em> e qualidade de vida
             </h1>
             <p className="mt-6 max-w-lg text-lg opacity-85">
               Tratamentos personalizados para a causa do seu problema, não apenas para a dor. Recupere sua qualidade de vida com o Método IR.
@@ -297,7 +297,7 @@ function Index() {
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">Sobre</p>
           <h2 className="mt-3 text-3xl font-semibold text-primary sm:text-4xl">Dra. Ivonete Ribeiro</h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Antes de cuidar de centenas de pacientes, ela viveu a dor na pele: uma hérnia de disco que limitava sua rotina.
+            Antes de cuidar de centenas de pacientes, ela viveu a dor na pele: 8 hérnias de disco que limitavam sua rotina.
             Ao superar essa fase através do movimento, encontrou seu propósito — e criou o Método IR para ajudar outras pessoas a viverem sem dor.
           </p>
           <blockquote className="mt-8 rounded-2xl bg-lavender p-7">
