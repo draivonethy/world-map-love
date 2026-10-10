@@ -36,7 +36,7 @@ const services = [
 const reviews = [
   { n: "Aislany Oliveira", t: "Excelente profissional! Trata cada caso de forma única, com foco na identificação e resolução da causa raiz de cada situação." },
   { n: "Franciléia Soares", t: "Profissional extremamente dedicada e competente! O trabalho dela tem feito muita diferença na minha vida e na das minhas alunas. Recomendo demais!" },
-  { n: "Tamily Fernandes", t: "A Dra. Ivonete é um profissional fantástica. Além do conhecimento técnico, ela demonstra uma empatia rara. Escutou minhas queixas com muita atenção e me explicou o tratamento de forma clara. Saí de lá muito mais tranquila, super recomendado 👋" },
+  { n: "Tamily Fernandes", t: "A Dra. Ivonete é um profissional fantástica. Além do conhecimento técnico, ela demonstra uma empatia rara. Escutou minhas queixas com muita atenção e me explicou o tratamento de forma clara. Saí de lá muito mais tranquila, super recomendado" },
 ];
 
 function WaButton({ children, className = "" }: { children: React.ReactNode; className?: string }) {
