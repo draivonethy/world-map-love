@@ -247,7 +247,7 @@ function Index() {
             <div className="relative mt-10">
               <div className="absolute inset-y-0 left-0 w-px bg-rule-y" />
               <p className="pl-8 font-serif text-xl italic leading-relaxed text-primary-foreground/85 sm:text-2xl">
-                “Ondas de cuidado focadas na pessoa inteira, não apenas onde dói.”
+                “Um método estruturado em 4 pilares para tratar a causa, não só o sintoma.”
               </p>
             </div>
             <div className="mt-12 opacity-25">
